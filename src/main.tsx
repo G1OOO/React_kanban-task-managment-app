@@ -3,13 +3,25 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Main from "./pages/Main"; 
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Main />,
-  },
-]);
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <Platform 
+          dark={dark} 
+          setDark={setDark} 
+          task={task} 
+          setTask={setTask} 
+        />
+      ),
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
+};
 
 createRoot(document.getElementById("root")!).render(
-  <RouterProvider router={router} />
+  <React.StrictMode>
+    <AppWrapper />
+  </React.StrictMode>
 );

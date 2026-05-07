@@ -46,19 +46,22 @@ const Tasks = ({
   };
 
   const handleToggleSubtask = (subIndex: number) => {
+    console.log("text");
     if (!selectedTask) return;
 
     setBoards((prev: Board[]) => {
       const updatedBoards = prev.map((b) => {
         if (b.name !== board.name) return b;
 
+        console.log("board", b.name);
         return {
           ...b,
           columns: b.columns.map((col) => ({
             ...col,
             tasks: col.tasks.map((task) => {
               if (task.title !== selectedTask.title) return task;
-
+              console.log("task", task.title);
+              console.log("sub-index", subIndex);
               const updatedTask = {
                 ...task,
                 subtasks: task.subtasks.map((sub, i) =>
