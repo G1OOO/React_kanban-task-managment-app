@@ -1,15 +1,30 @@
-import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-import Main from "./pages/Main"; 
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
+import BoardPage from "./pages/BoardPage";
+import './index.css';
 
 const router = createBrowserRouter([
   {
+    path: "/dashboard",
+    element: <BoardPage />,
+  },
+  {
+    path: "/dashboard/:boardId",
+    element: <BoardPage />,
+  },
+  {
     path: "/",
-    element: <Main />,
+    element: <Navigate to="/dashboard" replace />,
+  },
+  {
+    path: "*",
+    element: <Navigate to="/dashboard" replace />,
   },
 ]);
 
-createRoot(document.getElementById("root")!).render(
-  <RouterProvider router={router} />
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
 );

@@ -14,7 +14,7 @@ body {
   width: 100vw;
 }
 
-.dark-theme {
+.dark {
   --bg-main: #20212c;
   --bg-secondary: #2b2c37;
   --text-main: #ffffff;
@@ -30,7 +30,7 @@ body {
   --subtask-bg: #20212c;
 }
 
-.light-theme {
+.light {
   --bg-main: #f4f7fd;
   --bg-secondary: #ffffff;
   --text-main: #000112;
@@ -303,9 +303,10 @@ body {
   gap: 15px;
   width: 255px;
   border-radius: 0 100px 100px 0;
+  margin-bottom: 30px;
 }
-.toggle-visibility-btn:hover{
-  background-color:#eaeaf5;
+.toggle-visibility-btn:hover {
+  background-color: #eaeaf5;
   color: #635fc7;
 }
 
@@ -603,7 +604,21 @@ body {
   top: calc(100% + 20px);
   right: 0;
 }
-
+.empty-state{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 16px;
+  margin-top: 50px;
+}
+.empty-p{
+  font-family: "Plus Jakarta Sans";
+  font-weight: 700;
+  font-size: 18px;
+  color: #828FA3;
+}
 .menu-item {
   background: none;
   border: none;
@@ -670,4 +685,34 @@ body {
 .delete-modal .secondary-btn {
   flex: 1;
   margin-top: 0;
+}
+.delete-warning {
+  font-weight: 500;
+  font-family: "Plus Jakarta Sans";
+  font-size: 13px;
+  color: #828fa3;
+}
+.delete-modal-actions {
+  width: 416px;
+}
+.delete-modal-actions button{
+  width: 200px;
+  height: 40px;
+  margin: 4px;
+  margin-top: 2em;
+}
+.delete-btn-confirm{
+  background-color: #ea5555;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.delete-btn-confirm:hover{
+  background-color: #FF9898;
+}
+.delete-modal-actions .secondary-btn:hover{
+  background-color: #fff;
 }
