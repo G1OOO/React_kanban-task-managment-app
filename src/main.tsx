@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import BoardPage from "./pages/BoardPage";
+import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import './index.css';
 
 const router = createBrowserRouter([
